@@ -84,7 +84,7 @@ Finance Tracker adalah aplikasi manajemen keuangan berbasis web yang dibangun de
 ### 📋 Requirements
 
 - **Node.js** >= 22.x
-- **npm** >= 10.x
+- **npm** >= 10.x or **bun** >= 1.3.x
 - **MySQL** 8.x+ atau **MariaDB** 10.x+
 
 ### 🚀 Instalasi
@@ -126,6 +126,8 @@ npm run db:push
 
 # Seed data awal (admin user & kategori)
 npm run db:seed
+or (if error)
+bun x tsx --env-file=.env prisma/seed.ts
 ```
 
 #### 5. Jalankan Aplikasi
