@@ -12,35 +12,94 @@
   --color-foreground: #f9fafb;
 }
 
-/* Theme Colors */
+/* Theme Colors - Override Tailwind indigo/purple palette per theme */
 [data-theme="default"] {
-  --accent-primary: #6366f1;
-  --accent-secondary: #8b5cf6;
+  /* Uses Tailwind default indigo/purple - no overrides needed */
 }
 
 [data-theme="ocean"] {
-  --accent-primary: #06b6d4;
-  --accent-secondary: #0891b2;
+  --color-indigo-50: oklch(98.4% 0.014 200.873);
+  --color-indigo-100: oklch(95.6% 0.032 199.769);
+  --color-indigo-200: oklch(91.7% 0.059 203.905);
+  --color-indigo-300: oklch(85.3% 0.101 202.661);
+  --color-indigo-400: oklch(75.3% 0.141 198.411);
+  --color-indigo-500: oklch(68.5% 0.147 200.231);
+  --color-indigo-600: oklch(60% 0.135 201.813);
+  --color-indigo-700: oklch(52.5% 0.112 202.156);
+  --color-indigo-800: oklch(45% 0.093 201.542);
+  --color-indigo-900: oklch(39.3% 0.074 202.033);
+  --color-indigo-950: oklch(28.4% 0.052 204.577);
+  --color-purple-400: oklch(72% 0.131 199);
+  --color-purple-500: oklch(65% 0.14 200);
+  --color-purple-600: oklch(57% 0.127 201);
 }
 
 [data-theme="sunset"] {
-  --accent-primary: #f97316;
-  --accent-secondary: #ea580c;
+  --color-indigo-50: oklch(98% 0.016 73.684);
+  --color-indigo-100: oklch(95.4% 0.038 75.164);
+  --color-indigo-200: oklch(90.1% 0.076 70.697);
+  --color-indigo-300: oklch(83.7% 0.128 66.29);
+  --color-indigo-400: oklch(75% 0.183 55.934);
+  --color-indigo-500: oklch(70.2% 0.191 47.604);
+  --color-indigo-600: oklch(64.6% 0.2 41.116);
+  --color-indigo-700: oklch(55.3% 0.195 38.402);
+  --color-indigo-800: oklch(47% 0.157 37.304);
+  --color-indigo-900: oklch(40.8% 0.123 38.172);
+  --color-indigo-950: oklch(27% 0.077 32.79);
+  --color-purple-400: oklch(72% 0.17 50);
+  --color-purple-500: oklch(67% 0.18 44);
+  --color-purple-600: oklch(60% 0.19 40);
 }
 
 [data-theme="forest"] {
-  --accent-primary: #10b981;
-  --accent-secondary: #059669;
+  --color-indigo-50: oklch(97.9% 0.021 166.113);
+  --color-indigo-100: oklch(95% 0.052 163.051);
+  --color-indigo-200: oklch(90.5% 0.093 164.15);
+  --color-indigo-300: oklch(84.5% 0.143 164.978);
+  --color-indigo-400: oklch(76.5% 0.177 163.223);
+  --color-indigo-500: oklch(69.6% 0.17 162.48);
+  --color-indigo-600: oklch(59.6% 0.145 163.225);
+  --color-indigo-700: oklch(52.7% 0.124 163.569);
+  --color-indigo-800: oklch(44.8% 0.1 164.152);
+  --color-indigo-900: oklch(39.3% 0.081 165.331);
+  --color-indigo-950: oklch(27% 0.055 163.362);
+  --color-purple-400: oklch(74% 0.16 160);
+  --color-purple-500: oklch(66% 0.155 161);
+  --color-purple-600: oklch(56% 0.135 162);
 }
 
 [data-theme="midnight"] {
-  --accent-primary: #8b5cf6;
-  --accent-secondary: #7c3aed;
+  --color-indigo-50: oklch(97.7% 0.014 308.299);
+  --color-indigo-100: oklch(94.6% 0.033 307.174);
+  --color-indigo-200: oklch(90.2% 0.063 306.703);
+  --color-indigo-300: oklch(82.7% 0.119 306.383);
+  --color-indigo-400: oklch(71.4% 0.203 305.504);
+  --color-indigo-500: oklch(62.7% 0.265 303.9);
+  --color-indigo-600: oklch(55.8% 0.288 302.321);
+  --color-indigo-700: oklch(49.6% 0.265 301.924);
+  --color-indigo-800: oklch(43.8% 0.218 303.724);
+  --color-indigo-900: oklch(38.1% 0.176 304.987);
+  --color-indigo-950: oklch(29.1% 0.149 302.717);
+  --color-purple-400: oklch(68% 0.22 300);
+  --color-purple-500: oklch(60% 0.27 298);
+  --color-purple-600: oklch(53% 0.28 296);
 }
 
 [data-theme="rose"] {
-  --accent-primary: #f43f5e;
-  --accent-secondary: #e11d48;
+  --color-indigo-50: oklch(96.9% 0.015 12.422);
+  --color-indigo-100: oklch(94.1% 0.03 12.58);
+  --color-indigo-200: oklch(89.2% 0.058 10.001);
+  --color-indigo-300: oklch(81% 0.117 11.638);
+  --color-indigo-400: oklch(71.2% 0.194 13.428);
+  --color-indigo-500: oklch(64.5% 0.246 16.439);
+  --color-indigo-600: oklch(58.6% 0.253 17.585);
+  --color-indigo-700: oklch(51.4% 0.222 16.935);
+  --color-indigo-800: oklch(45.5% 0.188 13.697);
+  --color-indigo-900: oklch(41% 0.159 10.272);
+  --color-indigo-950: oklch(27.1% 0.105 12.094);
+  --color-purple-400: oklch(68% 0.21 10);
+  --color-purple-500: oklch(61% 0.24 14);
+  --color-purple-600: oklch(55% 0.25 16);
 }
 
 /* Smooth transitions for theme changes */

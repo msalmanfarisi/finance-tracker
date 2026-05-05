@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useApp } from "@/contexts/AppContext";
 import CrudPage from "@/components/CrudPage";
 import Input from "@/components/ui/Input";
@@ -12,6 +12,19 @@ export default function BudgetsPage() {
   const [formData, setFormData] = useState<Record<string, unknown>>({
     name: "", amount: "", period: "monthly", startDate: "", endDate: "", categoryId: "", notes: "",
   });
+  const [categories, setCategories] = useState<{ value: string; label: string }[]>([]);
+
+  useEffect(() => {
+    fetch("/api/categories?type=budget")
+      .then((res) => res.json())
+      .then((data) => {
+        setCategories([
+          { value: "", label: `-- ${t.common.category} --` },
+          ...(data.categories || []).map((c: { id: string; name: string }) => ({ value: c.id, label: c.name })),
+        ]);
+      })
+      .catch(() => {});
+  }, [t.common.category]);
 
   const fmt = (n: number) => new Intl.NumberFormat(currency === "IDR" ? "id-ID" : "en-US", { style: "currency", currency, minimumFractionDigits: 0 }).format(n);
 
@@ -36,6 +49,7 @@ export default function BudgetsPage() {
     <>
       <Input label={t.budgets.budgetName} value={formData.name as string} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required />
       <Input label={t.budgets.budgetAmount} type="number" value={formData.amount as string} onChange={(e) => setFormData({ ...formData, amount: e.target.value })} required />
+      <Select label={t.common.category} value={formData.categoryId as string} onChange={(e) => setFormData({ ...formData, categoryId: e.target.value })} options={categories} required />
       <Select label={t.budgets.period} value={formData.period as string} onChange={(e) => setFormData({ ...formData, period: e.target.value })} options={[
         { value: "monthly", label: t.budgets.monthly },
         { value: "quarterly", label: t.budgets.quarterly },
